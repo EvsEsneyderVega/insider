@@ -36,6 +36,10 @@ const comercialRouter = require('./api/comercial');
 
 const calificacionRouter = require('./api/calificacion');
 
+const calificacion_listaRouter = require('./api/calificacion_lista'); 
+
+const formatoRouter = require('./api/formato');
+
 const midleware = require('../utils/midleware');
 
 router.use('/usuario', usuarioRoute);
@@ -58,6 +62,8 @@ router.use('/vehiculo',midleware.checkToken,vehiculoRouter);
 router.use('/propietario',midleware.checkToken,propietarioRouter);
 router.use('/comercial',midleware.checkToken,comercialRouter);
 router.use('/calificacion',midleware.checkToken,calificacionRouter);
+router.use('/calificacion_lista',midleware.checkToken,calificacion_listaRouter);
+router.use('/formato',formatoRouter);
 /*fin midelware*/
 
 module.exports = router; 

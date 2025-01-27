@@ -14,5 +14,9 @@ module.exports = (sequelize,type)=>{
         CALIFICACION_CAL:{
             type: type.INTEGER
         }
+    },{
+        timestamps: false,
+        freezeTableName: true,
+        logging: false
     })
 }

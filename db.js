@@ -21,6 +21,10 @@ const propietario = require('./models/propietario');
 const comercial = require('./models/comercial');
 const calificacion = require('./models/calificacion');
 const calificacion_lista = require('./models/calificacion_lista');
+const condiciones = require('./models/condiciones');
+const formato = require('./models/formato');
+const ingreso = require('./models/ingreso');
+
 
 const sequelize = new Sequelize(process.env.DB_NAME,process.env.DB_USER,process.env.DB_PASSWORD,{
 
@@ -49,6 +53,9 @@ const Propietario = propietario(sequelize,Sequelize);
 const Comercial = comercial(sequelize,Sequelize);
 const Calificacion = calificacion(sequelize,Sequelize);
 const Calificacion_lista = calificacion_lista(sequelize,Sequelize);
+const Condiciones = condiciones(sequelize,Sequelize);
+const Formato = formato(sequelize,Sequelize);
+const Ingreso = ingreso(sequelize,Sequelize);
 
 sequelize.sync({force: false})
 .then(()=>{
@@ -74,5 +81,8 @@ module.exports = {
     Propietario,
     Comercial,
     Calificacion,
-    Calificacion_lista
+    Calificacion_lista,
+    Condiciones,
+    Formato,
+    Ingreso
 }

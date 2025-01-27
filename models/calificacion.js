@@ -7,5 +7,9 @@ module.exports = (sequelize,type)=>{
         NOMBRE:{
             type: type.STRING
         }
+    },{
+        timestamps: false,
+        freezeTableName: true,
+        logging: false
     })
 }
